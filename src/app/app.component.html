@@ -1,0 +1,23 @@
+<div class="main">
+  <div class="center">
+<h2>ToDo App </h2>
+<form class="one">
+  <mat-form-field>
+    <input matInput type="text" #todo placeholder="Enter todos"  (keyup.enter)='Add(todo.value)'
+              autocomplete=disabled>
+  </mat-form-field>
+</form>
+
+
+<button mat-stroked-button color='#000000' (click)='Add(todo.value)'>Add</button>
+
+<div class="todos"
+   *ngFor='let item of todos; let id=index;'>
+    <span id="break" class={{yes}} >
+     {{item.todo}}
+    </span>
+     <button mat-button (click)='remove(id)'>Delete</button>
+</div>
+
+</div>
+</div>
